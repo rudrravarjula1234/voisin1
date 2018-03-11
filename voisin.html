@@ -1,0 +1,166 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+           
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <!-- page slide css -->
+            <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+            
+            <!-- main css -->
+            <link rel="stylesheet" type="text/css" href="main.css" />
+            
+            <!-- jquery js -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        
+            <!-- page slide js -->
+            <script type="text/javascript" src="jquery.fullPage.js"></script>
+            <script type="text/javascript" src="examples.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#fullpage').fullpage({
+                        sectionsColor: ['#C8E6C9', '#efa047', '#6dcc7a', '#f1d01b', '#eb4d55'],
+                      anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+                      
+                    });
+                });
+            </script>
+        
+    </head>
+    <body>
+        
+        <div class="logo">
+            <img src="images/voisin.png" alt="Voisin">
+        </div>
+
+        <div id="mydiv">
+                <div id="mydivheader"><a href="#mydivcontent" >Menu</a></div>
+                <div id="mydivcontent" class="hidden">
+					<ul>
+						<li>Services</li>
+						<li>Traning</li>
+						<li>Prodects</li>
+						<li>Partners</li>
+						<li>About Us</li>
+					</ul>	
+				</div>
+              </div>
+
+        <div id="fullpage">
+            <div class="section" id="section0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 services">
+                                <img src="images/services.png" >
+                            </div>
+                            <div class="col-sm-6 services2">
+                                <h1>Services</h1>
+                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec 
+                                        quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat 
+                                        massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                        arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                        Nullam dictum felis eu pede mollis pretium.</p>
+                                <div>
+                                        <button class="button"><span>Swipe Left To Know More</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+            </div>
+            <div class="section" id="section1">
+                <div class="slide" id="slide1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                Products
+                            </div>
+                            <div class="col-sm-6">
+                                <h1 style="color:white;">Products</h1>
+                                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec 
+                                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat 
+                                    massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                                    arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                    Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. 
+                                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+                                    porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, 
+                                    viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque 
+                                    rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies 
+                                    nisi. Nam eget dui. Etiam rhoncus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" id="slide2">
+                    slide2
+                </div>
+            </div>
+            <div class="section" id="section2">   
+                <div class="slide">
+                    slide 3
+                </div>
+                <div class="slide">
+                    slide4
+                </div>
+            </div>
+        </div>
+        
+
+       
+          <!-- sidemenu js    -->
+          <script>
+              
+//Make the DIV element draggagle:
+dragElement(document.getElementById(("mydiv")));
+
+function dragElement(elmnt) {
+  var  pos2 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+
+    pos2 = pos4 - e.clientY;
+
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+          </script>    
+    </body>
+</html>
